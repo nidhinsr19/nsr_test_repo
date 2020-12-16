@@ -1,10 +1,11 @@
 terraform {
   backend "s3" {
-    bucket  = "techlanders-statefile"
+    bucket  = "nsr-bucket"
     key  = "terraform/state"
     region = "us-east-2"
 #   access_key = "XXXXXXXXXXXXXXXXXXXXXX"
 #   secret_key = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
   }
 }
+
 
