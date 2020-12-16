@@ -8,8 +8,17 @@ resource "aws_instance" "nsr-awsserver" {
   }
 }
 
+resource "aws_s3_bucket" "ndhinsr-bucket" {
+  bucket = "nidhinsr-dump"
+  acl    = "private"
+
+  tags = {
+    Name        = "nidhinsr-dump-here"
+    Environment = "Dev"
+  }
+}
+
 output "nsrawsserver-ip" {
   value = "${aws_instance.nsr-awsserver.public_ip}"
 }
-
 
