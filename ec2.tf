@@ -8,6 +8,10 @@ resource "aws_instance" "nsr-awsserver" {
   }
 }
 
+provisioner "local-exec" {
+    command = "echo The servers IP address is ${self.public_ip} && echo ${self.public_ip} > /root/inventory"
+  }
+
 #resource "aws_s3_bucket" "ndhinsr-bucket" {
 #  bucket = "nidhinsr-dump"
 #  acl    = "private"
